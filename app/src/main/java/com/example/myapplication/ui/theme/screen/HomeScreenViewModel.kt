@@ -32,7 +32,7 @@ class HomeScreenViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(result = GenericUiState.Success(response.body() ?: emptyList()))
                     }
-                }else{
+                } else {
                     _uiState.update {
                         it.copy(result = GenericUiState.Failure("Something Went Wrong"))
                     }
