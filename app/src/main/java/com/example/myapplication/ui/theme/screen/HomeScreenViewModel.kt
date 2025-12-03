@@ -32,9 +32,16 @@ class HomeScreenViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(result = GenericUiState.Success(response.body() ?: emptyList()))
                     }
+                }else{
+                    _uiState.update {
+                        it.copy(result = GenericUiState.Failure("Something Went Wrong"))
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                _uiState.update {
+                    it.copy(result = GenericUiState.Failure("Something Went Wrong"))
+                }
 
             }
         }
